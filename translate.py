@@ -19,7 +19,9 @@ def conn(past):
 
 
 while True:
+
     first = datetime.datetime.now()
+
     while not past:
         now = datetime.datetime.now().minute - first.minute
         if now == 1:
@@ -27,9 +29,11 @@ while True:
             first = datetime.datetime.now()
         time.sleep(1)
         past = pyperclip.paste()
+
     if past == 'stop':
         pyautogui.alert(f'Exit')
         break
+
     if type(past) == str:
         past = past.replace('\n', ' ').replace('\r', '').lower()
         try:
@@ -50,7 +54,4 @@ while True:
 
 subprocess.Popen(['start', 'new_dict.txt'], shell=True)
 
-# past = pyperclip.paste()
-# print(f'1past = {past}')
-# past = pyperclip.copy('')
-# print(f'2past = {past}')
+

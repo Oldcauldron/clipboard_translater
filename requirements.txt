@@ -1,0 +1,4 @@
+googletrans==2.4.0
+loguru==0.4.1
+PyAutoGUI==0.9.50
+pyperclip==1.8.0
