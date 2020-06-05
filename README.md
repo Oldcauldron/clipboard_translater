@@ -4,6 +4,7 @@ And you can choose option that show synonims for word (using thesaurus.com)
 
 Also, you can copy in clipboard 'stop' word or 'pause', it activates corresponding functions.
 
+*For activate start translate.bat or just 'python translate.py'*
 
 
 
