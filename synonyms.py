@@ -1,6 +1,7 @@
 
 import requests
 from bs4 import BeautifulSoup as bs
+from loguru import logger
 
 
 def syn(var):
@@ -20,15 +21,27 @@ def syn(var):
         for i in scripts_info:
             inside_scripts = str(i.string)
             if 'window.INITIAL_STATE' in inside_scripts:
+                # logger.info(f'inside_scripts - {inside_scripts}')
                 div = inside_scripts.replace('\"exampleSentences\"', '-7ag1-'
                                              ).replace('\"posTabs\"', '-7ag1-')
                 div = div.split('-7ag1-')
-                div = div[1].split(']},{')
+
+                # for n, i in enumerate(div):
+                #     try:
+                #         print(f'Num {n}')
+                #         print(f'{i}')
+                #     except UnicodeEncodeError:
+                #         pass
+                #     print('\n!!!!!!\n\n\n\n\n')
+
+                div = div[2].split(']},{')
+                logger.info(f'div - {div}')
                 for i5 in div:  # перебор definition объектов
                     i5 = i5.split('\"antonyms\"')
                     i5 = i5[0].replace('{', '-7ag1-').replace('}', '-7ag1-')
                     i5 = i5.replace('[', '-7ag1-').replace(']', '-7ag1-')
                     i5 = i5.split('-7ag1-')
+                    # logger.info(f'i5 - {i5}')
                     for i in i5:
                         i = i.split('\",\"')
 
