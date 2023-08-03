@@ -1,5 +1,5 @@
 googletrans==2.4.0
-loguru==0.4.1
+loguru==0.5.3
 PyAutoGUI==0.9.50
 pyperclip==1.8.0
 bs4==0.0.1
